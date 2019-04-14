@@ -2,6 +2,8 @@
 var characterBank = [];
 var appState;
 
+var defaultCharVal = "default";
+
 //Question class - holds answers and a picture
 class Character {
     constructor(name, exercises) {
@@ -50,17 +52,42 @@ function resetApp(){
     characterBank.push(new Character("General", ["IAD jH", "crossup jM"]));
     characterBank.push(new Character("Bardock", ["j214M oki from j2H", "j214M > assist conversion", "jH slide oki", "j236M corner combo"]));
     characterBank.push(new Character("Goku (SSJ)", ["j236L oki from j2H", "j214M > assist conversion", "jH slide oki", "j236M corner combo"]));
-    characterBank.push(new Character("Goku (SSGSS)", ["j214M oki from j2H", "241M corner loops", "jH slide oki"]));
+    characterBank.push(new Character("Goku (SSGSS)", ["j214M oki from j2H", "214M corner loops", "jH slide oki"]));
 
-    //Display Characters
+    // //Display Characters
+    // $.each(characterBank, function(i, character){
+    //     $("#app-field").append(addToField("div", "char-select", character.name));
+    // });
+
+    //Adds Character dropdown
+    var charDropDown = $("<select>");
+    charDropDown.addClass("char-drop");
+
+    //Add first DDL default option
+    var defaultOption = $("<option>");
+    defaultOption.attr("value", defaultCharVal);
+    defaultOption.text("--Select a character--");
+    charDropDown.append(defaultOption);
+
     $.each(characterBank, function(i, character){
-        $("#app-field").append(addToField("div", "char-select", character.name));
+        var charOption = $("<option>");
+        charOption.attr("value", character.name);
+        charOption.text(character.name);
+        charDropDown.append(charOption);
     });
+    $("#app-field").append(charDropDown);
+
+    console.log(charDropDown);
 
     //Game initialized state
     appState = 1;
     $("#app-state").text("App state: " + appState);
 }
+
+// $("#app-field").on("change", ".char-drop", function(){
+//     console.log("hi!");
+// });
+
 
 //Resets game after Game Over
 $("#start-button").on("click", function(){
@@ -71,19 +98,16 @@ $("#start-button").on("click", function(){
 });
 
 
-function chooseCharacter(){
+function chooseCharacter(name){
+    console.log(name);
+
+    
     //When an answer is clicked
-    if(appState == 1){
-        var result;
-
-        //Store the clicked character in 'chosen'
-        var clickedName = $(this).text();
-        console.log(clickedName);
-
+    if(appState == 1 && name !== defaultCharVal){
         var chosenCharacter;
 
         $.each(characterBank, function(i, character){
-            if(clickedName === character.name){
+            if(name === character.name){
                 chosenCharacter = character;
             }
         });
@@ -129,7 +153,10 @@ function showExercise(character){
 }
 
 //When user answers the question
-$("#app-field").on("click", ".char-select", chooseCharacter);
+$("#app-field").on("change", ".char-drop", function(){
+    console.log($(this).val());
+    chooseCharacter($(this).val());
+});
 
 $(document).ready(function(){
     resetApp();

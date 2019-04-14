@@ -31,6 +31,10 @@ main{
     padding-top: 15px;
 }
 
+.char-drop{
+    margin: 50px;
+}
+
 #start-button{
     display: none;
     margin-top: 10px;
@@ -79,7 +83,7 @@ main{
     padding: 25px;
     padding-left: 15px;
     padding-right: 15px;
-    max-width: 400px;
+    max-width: 350px;
     text-align: center;
     font-weight: bold;
     margin: auto;
