@@ -132,6 +132,8 @@ function showExercise(character){
     console.log("Display Exercise");
 
     var exerciseDiv = $("<div>");
+    exerciseDiv.addClass("col-md-8");
+    exerciseDiv.addClass("col-xs-4");
     exerciseDiv.addClass("exercise-board");
 
     //Add final game values to Game Over screen
