@@ -1,0 +1,101 @@
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 3em;
+    font-weight: bold;
+}
+
+h2{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+body{
+    padding: 15px;
+    margin: auto;
+    background-image: url("../images/background.png");
+    font-family: 'Orbitron', sans-serif;
+}
+
+main{
+    text-align: center;
+}
+
+#app-state{
+    display: none;
+}
+
+.starter{
+    padding-top: 15px;
+}
+
+#start-button{
+    display: none;
+    margin-top: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgb(71, 71, 71);
+    color: white;
+}
+
+#app-field{
+    height: 400px;
+    max-width: 750px;
+    color: white;
+    border: solid 1px black;
+    border-radius: 15px;
+    margin: 25px auto;
+    margin-bottom: 5px;
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-image: url("../images/fighters.png");
+    /* object-fit: contain; */
+    background-size: cover;
+}
+
+.char-select{
+    background: white;
+    color: black;
+    border: solid 1px black;
+    border-radius: 25px;
+    width: 150px;
+    padding: 15px 10px;
+    /* margin: auto; */
+    margin: 15px auto;
+}
+
+
+.exercise-board{
+    background: white;
+    color: black;
+    border: solid 1px black;
+    border-radius: 25px;
+    padding: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 400px;
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.exercise{
+    margin-top: 75px;
+    margin-bottom: 75px;
+    font-size: 1.25em;
+}
+
+.restart-message{
+    margin-top: 25px;
+    margin-bottom: 0;
+    font-size: .75em;
+    text-align: center;
+}
