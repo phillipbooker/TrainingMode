@@ -138,7 +138,7 @@ function showExercise(character){
     exerciseDiv.addClass("exercise-board");
 
     //Add final game values to Game Over screen
-    exerciseDiv.append(addToField("p", "", "Exercise"));
+    exerciseDiv.append(addToField("p", "", "Exercise:"));
     
     exerciseDiv.append(addToField("p", "exercise", character.exercises[exerciseNum]));
 
