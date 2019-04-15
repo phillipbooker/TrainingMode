@@ -23,6 +23,10 @@ main{
     text-align: center;
 }
 
+.blurb{
+    margin-bottom: 5px;
+}
+
 #app-state{
     display: none;
 }
@@ -33,6 +37,7 @@ main{
 
 .char-drop{
     margin: 50px auto;
+    max-width: 225px;
 }
 
 #start-button{
@@ -92,8 +97,8 @@ main{
 }
 
 .exercise{
-    margin-top: 75px;
-    margin-bottom: 75px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-size: 1.25em;
 }
 

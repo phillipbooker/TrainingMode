@@ -61,6 +61,7 @@ function resetApp(){
 
     //Adds Character dropdown
     var charDropDown = $("<select>");
+    charDropDown.addClass("form-control");
     charDropDown.addClass("char-drop");
 
     //Add first DDL default option
