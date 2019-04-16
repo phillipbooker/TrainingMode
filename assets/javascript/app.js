@@ -21,27 +21,15 @@ function addToField(tag, divClass, text){
     return (questionFieldElement);
 }
 
-//Takes an array of answers for a question (first answer is correct)
-function makeCharacter(name, exercises){
-    var exercisesPush = [];
-    
-    for(var i = 0; i < exercises.length; i++){
-        var newExercise = new Exercise(i, exercises[i]);
-        exercisesPush.push(newExercise);
-    }
-    
-    var character = new Character(name, exercisesPush);
-    return(character);
-}
 
 //Initialize app
 function resetApp(){
-    //Empty the game field
+    //Empty the app field
     $("#app-field").empty();
     $("#timer").text("");
 
 
-    //Tell user to click in the game field to start game
+    //Tell user to select a character
     var clickHere = $("<h2>");
     clickHere.text("Choose a character for an exercise!")
     clickHere.addClass("starter");
@@ -50,14 +38,9 @@ function resetApp(){
     //Initialize the character bank
     characterBank = [];
     characterBank.push(new Character("General", ["IAD jH", "crossup jM"]));
-    characterBank.push(new Character("Bardock", ["j214M oki from j2H", "j214M > assist conversion", "jH slide oki", "j236M corner combo"]));
-    characterBank.push(new Character("Goku (SSJ)", ["j236L oki from j2H", "j214M > assist conversion", "jH slide oki", "j236M corner combo"]));
+    characterBank.push(new Character("Bardock", ["j214M oki from j2H", "j214M > assist > 5LL2M5H > 236L > 236HS", "jH slide oki (midscreen)", "j236M corner combo", "corner 236S starter", "236L > vanish conversion"]));
+    characterBank.push(new Character("Goku (SSJ)", ["j236L oki from j2H (corner)", "j236L oki from j2H (midscreen)", "jH slide oki (corner)", "jH slide oki (midscreen)", "j236M corner combo", "236S > vanish conversion"]));
     characterBank.push(new Character("Goku (SSGSS)", ["j214M oki from j2H", "214M corner loops", "jH slide oki"]));
-
-    // //Display Characters
-    // $.each(characterBank, function(i, character){
-    //     $("#app-field").append(addToField("div", "char-select", character.name));
-    // });
 
     //Adds Character dropdown
     var charDropDown = $("<select>");
@@ -138,7 +121,7 @@ function showExercise(character){
     exerciseDiv.addClass("exercise-board");
 
     //Add final game values to Game Over screen
-    exerciseDiv.append(addToField("p", "", "Exercise:"));
+    exerciseDiv.append(addToField("p", "", character.name + " Exercise:"));
     
     exerciseDiv.append(addToField("p", "exercise", character.exercises[exerciseNum]));
 
