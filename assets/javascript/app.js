@@ -41,6 +41,7 @@ function resetApp(){
     characterBank.push(new Character("Bardock", ["j214M oki from j2H", "j214M > assist > 5LL2M5H > 236L > 236HS", "jH slide oki (midscreen)", "j236M corner combo", "corner 236S starter", "236L > vanish conversion"]));
     characterBank.push(new Character("Goku (SSJ)", ["j236L oki from j2H (corner)", "j236L oki from j2H (midscreen)", "jH slide oki (corner)", "jH slide oki (midscreen)", "j236M corner combo", "236S > vanish conversion"]));
     characterBank.push(new Character("Goku (SSGSS)", ["j214M oki from j2H", "214M corner loops", "jH slide oki"]));
+    characterBank.push(new Character("Match Goals", ["2H all super dashes", "Tech all dragon rush attempts", "No panic reversals"]));
 
     //Adds Character dropdown
     var charDropDown = $("<select>");
